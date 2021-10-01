@@ -27,12 +27,12 @@ class Unet(nn.Module):
         self.ups = nn.ModuleList()
         self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
 
-        # Down part of Unet
+        # Down part of Unet: Contracting path
         for feature in features:
             self.downs.append(Conv(in_channels, feature))
             in_channels = feature
 
-        # Up part of Unet
+        # Up part of Unet: Expansive path
         for feature in reversed(features):
             self.ups.append(
                 nn.ConvTranspose2d(
@@ -78,3 +78,30 @@ def test():
 
 if __name__ == '__main__':
     test()
+
+#
+# res = []
+#
+#
+# def dfs(s):
+#
+#     if len(res) == 3:
+#
+#         print(res)
+#         return
+#     for i in s:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
