@@ -26,16 +26,3 @@ class Carvana(Dataset):
             mask = augmentations['mask']
         return image, mask
 
-
-
-
-
-
-
-
-
-
-
-
-
-
